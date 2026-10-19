@@ -1,0 +1,21 @@
+{% extends "app/base.html" %}
+{% block content %}
+  <div class="page-header">
+    <h1>Моя галерея</h1>
+  </div>
+
+  <div class="grid">
+    {% for photo in photos %}
+      <figure class="photo-card">
+        <div class="img-wrapper">
+          <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+        </div>
+        <figcaption>{{ photo.title }}</figcaption>
+      </figure>
+    {% empty %}
+      <div class="empty-state">
+        <p>Пока нет фотографий. Самое время загрузить первую!</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

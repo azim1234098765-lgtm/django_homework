@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Галерея</title>
+  <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="{% static 'app/images/google.png' %}" alt="Логотип" height="40">
+      <span class="site-title">Галерея</span>
+    </div>
+    <nav class="nav-links">
+      <a href="{% url 'photo_list' %}" class="nav-link">Галерея</a>
+      <a href="{% url 'photo_upload' %}" class="nav-link btn-glow">Добавить фото</a>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

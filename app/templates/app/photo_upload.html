@@ -1,0 +1,11 @@
+{% extends "app/base.html" %}
+{% block content %}
+  <div class="form-wrapper">
+    <h1>Загрузка фотографии</h1>
+    <form method="post" enctype="multipart/form-data" class="styled-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="submit-btn">Загрузить</button>
+    </form>
+  </div>
+{% endblock %}
